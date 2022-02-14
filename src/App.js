@@ -1,9 +1,9 @@
-import Searchbar from "./components/Searchbar";
+import Home from "./views/Home";
 
 function App() {
   return (
     <div className="App">
-      <Searchbar />
+      <Home />
     </div>
   );
 }
