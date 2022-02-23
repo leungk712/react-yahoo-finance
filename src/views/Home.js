@@ -7,7 +7,7 @@ const { Header, Footer, Sider, Content } = Layout;
 
 const Home = () => {
     return (
-        <Layout style={{ height: '100vh' }}>
+      <Layout style={{ minHeight: '100vh' }}>
         <Sider>Sider</Sider>
         <Layout>
           <Header />
