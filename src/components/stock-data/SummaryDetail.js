@@ -1,5 +1,4 @@
 import { useSelector } from "react-redux";
-
 import { Card, Col, Row, Steps } from 'antd';
 
 const { Step } = Steps;
@@ -14,7 +13,7 @@ const SummaryDetail = () => {
         textAlign: 'center',
     };
 
-    if (summaryDetail && Object.keys(summaryDetail).length) {
+    if (Object.keys(stock).length) {
         const dividendInfo = {
             dividendRate: summaryDetail.dividendRate && summaryDetail.dividendRate.fmt ? `$${summaryDetail.dividendRate.fmt}` : `-`,
             dividendYield: summaryDetail.dividendYield && summaryDetail.dividendYield.fmt ? `(${summaryDetail.dividendYield.fmt})` : ``
@@ -38,7 +37,7 @@ const SummaryDetail = () => {
                             <h1>Day Range:</h1> 
                         </Col>
                         <Col span={16}>
-                            <Steps current={2} progressDot small>
+                            <Steps current={2} progressDot size="small">
                                 <Step
                                     description={`$${summaryDetail.regularMarketDayLow.fmt}`}
                                 />
@@ -55,7 +54,7 @@ const SummaryDetail = () => {
                             <h1>52 Week Range:</h1> 
                         </Col>
                         <Col span={16}>
-                            <Steps current={2} progressDot small>
+                            <Steps current={2} progressDot size="small">
                                 <Step
                                     description={`$${summaryDetail.fiftyTwoWeekLow.fmt}`}
                                 />

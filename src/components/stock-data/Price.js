@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { Card, Col, Divider, Row, Tag } from 'antd';
-import './SummaryDetail';
+import { Column } from '@ant-design/plots';
+import Recommendations from "./Recommendations";
 import SummaryDetail from "./SummaryDetail";
 
 const Price = () => {
@@ -8,7 +9,7 @@ const Price = () => {
 
     const { price } = stock;
 
-    if (price && Object.keys(price).length) {
+    if (Object.keys(stock).length) {
         return (
             <div>
                 <Row>
@@ -45,6 +46,7 @@ const Price = () => {
                                 </Col>
                             </Row>
                             <Divider />
+                            <Recommendations />
                         </Card>
                     </Col>
                     
