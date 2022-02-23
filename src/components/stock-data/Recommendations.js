@@ -61,12 +61,15 @@ const Recommendations = () => {
           },
         }
     };
-    return (
-        <div style={{ "padding": "20px" }}>
-            <Title level={3}>Analyst Recommendations</Title>
-            <Column {...config} />
-        </div>
-    );
+    
+    if (Object.keys(stock).length) {
+      return (
+          <div style={{ "padding": "20px" }}>
+              <Title level={3}>Analyst Recommendations</Title>
+              <Column {...config} />
+          </div>
+      );
+    }
 }
 
 export default Recommendations;
