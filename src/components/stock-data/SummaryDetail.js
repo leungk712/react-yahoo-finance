@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
-import { Card, Col, Row, Steps } from 'antd';
+import { Card, Col, Divider, Row, Steps } from 'antd';
+import Recommendations from "./Recommendations";
 
 const { Step } = Steps;
 
@@ -105,6 +106,10 @@ const SummaryDetail = () => {
                         </Col>
                     </Row>
                 </Card.Grid>
+
+                <Divider />
+
+                <Recommendations />
             </Card>
         )
     }

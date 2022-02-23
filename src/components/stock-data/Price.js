@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { Card, Col, Divider, Row, Tag } from 'antd';
-import { Column } from '@ant-design/plots';
-import Recommendations from "./Recommendations";
+import AssetProfile from "./AssetProfile";
+import FundOwnership from "./FundOwnership";
 import SummaryDetail from "./SummaryDetail";
 
 const Price = () => {
@@ -45,8 +45,16 @@ const Price = () => {
                                     </Tag>
                                 </Col>
                             </Row>
+
                             <Divider />
-                            <Recommendations />
+
+                            <AssetProfile />
+
+                            <Divider />
+
+                            <FundOwnership />
+
+                            <Divider />
                         </Card>
                     </Col>
                     

@@ -23,7 +23,7 @@ function Searchbar() {
     }
 
     return (
-        <div>
+        <div style={{ "marginBottom": "30px"}}>
             <Input.Group compact>
                 <Input
                     data-testid="stock-ticker-search-input"
@@ -42,7 +42,6 @@ function Searchbar() {
                 </Button>
             </Input.Group>
         </div>
-
     )
 }
 

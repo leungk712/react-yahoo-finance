@@ -62,7 +62,7 @@ const Recommendations = () => {
         }
     };
     return (
-        <div>
+        <div style={{ "padding": "20px" }}>
             <Title level={3}>Analyst Recommendations</Title>
             <Column {...config} />
         </div>

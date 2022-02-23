@@ -12,7 +12,7 @@ const Home = () => {
         <Layout>
           <Header />
           <Content style={{ margin: '50px' }}>
-              <Searchbar />
+              <Searchbar/>
               <Price />
           </Content>
           <Footer />
