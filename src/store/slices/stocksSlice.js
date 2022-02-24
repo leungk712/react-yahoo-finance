@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from "axios";
 
-const stockAPI = axios.create({
+export const stockAPI = axios.create({
     baseURL: process.env.REACT_APP_API_URL,
     timeout: 0,
     headers : { "x-api-key": process.env.REACT_APP_API_KEY }

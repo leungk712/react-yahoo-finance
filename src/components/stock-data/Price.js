@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { Card, Col, Divider, Row, Tag } from 'antd';
+import { Card, Col, Divider, Row } from 'antd';
 import AssetProfile from "./AssetProfile";
 import FundOwnership from "./FundOwnership";
 import SummaryDetail from "./SummaryDetail";
@@ -35,14 +35,15 @@ const Price = () => {
                                     </h1>
                                 </Col>
                                 <Col span={10}>
-                                    <Tag
-                                        color={price.regularMarketChange.raw < 0.00 ? "red" : "green"}
-                                        style={{height: '50px', lineHeight: '50px', textAlign: 'center', marginTop: '10px'}}
+                                    <h1
+                                        style={{
+                                            fontSize: '40px',
+                                            fontWeight: 'bold',
+                                            color: price.regularMarketChange.raw < 0.00 ? "#C0392B" : "#27AE60"
+                                        }}
                                     >
-                                        <h1 style={{ fontSize: '40px', fontWeight: 'bold'}}>
-                                            ${ price.regularMarketChange.fmt } ({ price.regularMarketChangePercent.fmt })
-                                        </h1>
-                                    </Tag>
+                                        ${ price.regularMarketChange.fmt } ({ price.regularMarketChangePercent.fmt })
+                                    </h1>
                                 </Col>
                             </Row>
 

@@ -1,12 +1,13 @@
-import { Button, Col, Input, Row } from 'antd';
+import { Button, Input } from 'antd';
 import { useState } from 'react';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { fetchStockInformation } from "../store/slices/stocksSlice";
 import { queryParamsString, yahooFinanceURL } from "../helpers/constants";
 
 function Searchbar() {
     const [stockTicker, setStockTicker] = useState("");
     const dispatch = useDispatch();
+    const stock = useSelector(state => state.stocks.value);
 
     const payload = {
         url: yahooFinanceURL.quoteSummary,
@@ -37,6 +38,7 @@ function Searchbar() {
                     type="primary"
                     style={{height: '50px'}}
                     onClick={handleStockSearch}
+                    loading={stock.loadingMessage === "retrieving stock info..."}
                 >
                     Search
                 </Button>

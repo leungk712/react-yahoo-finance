@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { Table, Typography } from 'antd';
+import FundOwnershipPie from "./FundOwnershipPie";
 
 const { Title } = Typography;
 
@@ -46,6 +47,7 @@ const FundOwnership = () => {
                     pagination={false}
                     rowKey={(record) => record.title}
                 />
+                <FundOwnershipPie />
             </div>
         )
     }

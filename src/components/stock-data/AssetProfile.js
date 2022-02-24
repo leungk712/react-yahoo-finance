@@ -22,7 +22,7 @@ const AssetProfile = () => {
                    {assetProfile.longBusinessSummary}
                 </Paragraph>
                 <Paragraph>
-                    {assetProfile.city}, {assetProfile.state}, {assetProfile.country}
+                    {assetProfile.city}, {assetProfile.state ? `${assetProfile.state},` : ''} {assetProfile.country}
                 </Paragraph>
             </div>
         )
