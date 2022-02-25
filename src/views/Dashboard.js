@@ -1,5 +1,6 @@
 import { Tabs } from 'antd';
 import Price from '../components/stock-data/Price';
+import IncomeStatement from '../components/stock-data/IncomeStatement';
 
 const { TabPane } = Tabs;
 
@@ -9,7 +10,7 @@ const Dashboard = () => (
       <Price />
     </TabPane>
     <TabPane tab="Income Statement" key="2">
-      Content of Tab Pane 2
+      <IncomeStatement />
     </TabPane>
     <TabPane tab="Balance Sheets" key="3">
       Content of Tab Pane 3
