@@ -48,5 +48,4 @@ const stocksSlice = createSlice({
   }
 })
 
-export const {} = stocksSlice.actions
-export default stocksSlice.reducer
+export default stocksSlice.reducer;

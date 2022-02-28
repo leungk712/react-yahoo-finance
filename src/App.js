@@ -1,5 +1,5 @@
 import Home from "./views/Home";
-import 'antd/dist/antd.css';
+import 'antd/dist/antd.min.css';
 
 function App() {
   return (
