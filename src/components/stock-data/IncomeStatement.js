@@ -1,5 +1,7 @@
 import { useSelector } from "react-redux";
-import { Descriptions } from 'antd';    
+import { Descriptions } from 'antd';
+import parseISO from 'date-fns/parseISO'
+import { format } from 'date-fns';    
 
 const IncomeStatement = () => {
     const stock = useSelector(state => state.stocks.value.stock);
@@ -7,7 +9,7 @@ const IncomeStatement = () => {
     const { incomeStatementHistory } = stock;
 
     const incomeStatement = incomeStatementHistory.incomeStatementHistory.map(incomeStatement => ({
-        endDate: incomeStatement.endDate.fmt,
+        endDate: format(parseISO(incomeStatement.endDate.fmt), 'MM/dd/yyyy'),
         totalRevenue: incomeStatement.totalRevenue.fmt,
         costOfRevenue: incomeStatement.costOfRevenue.fmt,
         grossProfit: incomeStatement.grossProfit.fmt,
@@ -24,29 +26,57 @@ const IncomeStatement = () => {
         });
     }
 
+    const incomeStatementData = [
+        {
+            label: "Date",
+            value: "endDate",
+            dollarSign: false
+        },
+        {
+            label: "Total Revenues",
+            value: "totalRevenue",
+            dollarSign: true
+        },
+        {
+            label: "Cost of Revenue",
+            value: "costOfRevenue",
+            dollarSign: true
+        },
+        {
+            label: "Gross Profits",
+            value: "grossProfit",
+            dollarSign: true
+        },
+        {
+            label: "Total Operating Expenses",
+            value: "totalOperatingExpenses",
+            dollarSign: true
+        },
+        {
+            label: "Operating Income",
+            value: "operatingIncome",
+            dollarSign: true
+        },
+        {
+            label: "Net Income",
+            value: "netIncome",
+            dollarSign: true
+        },
+    ];
+
     return (
         <>
             <Descriptions bordered column={5}>
-                <Descriptions.Item label="Date" />
-                { displayIncomeStatementValue('endDate', false)}
-          
-                <Descriptions.Item label="Total Revenues"/>
-                { displayIncomeStatementValue('totalRevenue', true)}
-
-                <Descriptions.Item label="Cost of Revenue"/>
-                { displayIncomeStatementValue('costOfRevenue', true)}
-
-                <Descriptions.Item label="Gross Profits"/>
-                { displayIncomeStatementValue('grossProfit', true)}
-
-                <Descriptions.Item label="Total Operating Expenses"/>
-                { displayIncomeStatementValue('totalOperatingExpenses', true)}
-
-                <Descriptions.Item label="Operating Income"/>
-                { displayIncomeStatementValue('operatingIncome', true)}
-
-                <Descriptions.Item label="Net Income"/>
-                { displayIncomeStatementValue('netIncome', true)}
+                {
+                    incomeStatementData.map(incomeStatement => { 
+                        return (
+                            <>
+                                <Descriptions.Item label={incomeStatement.label} />
+                                { displayIncomeStatementValue(incomeStatement.value, incomeStatement.dollarSign) }
+                            </>
+                        )
+                    })
+                }
             </Descriptions> 
         </>
     )

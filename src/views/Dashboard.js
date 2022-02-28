@@ -1,4 +1,5 @@
 import { Tabs } from 'antd';
+import BalanceSheet from '../components/stock-data/BalanceSheet';
 import Price from '../components/stock-data/Price';
 import IncomeStatement from '../components/stock-data/IncomeStatement';
 
@@ -13,7 +14,7 @@ const Dashboard = () => (
       <IncomeStatement />
     </TabPane>
     <TabPane tab="Balance Sheets" key="3">
-      Content of Tab Pane 3
+      <BalanceSheet />
     </TabPane>
   </Tabs>
 );
